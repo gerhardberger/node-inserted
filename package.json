@@ -1,0 +1,18 @@
+{
+    "name": "node-inserted",
+    "version": "0.0.1",
+    "description": "Detect DOM element insertion.",
+    "main": "index.js",
+    "dependencies": {},
+    "keywords": ["browserify", "dom", "insert"],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gerhardberger/node-inserted.git"
+    },
+    "homepage": "https://github.com/gerhardberger/node-inserted",
+    "author": {
+        "name": "Gerhard Berger",
+        "email": "93.morph@gmail.com",
+        "url": "https://twitter.com/gerhard_berger"
+    }
+}
