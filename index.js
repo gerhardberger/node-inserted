@@ -1,7 +1,7 @@
 module.exports = function (className) {
 
 if (!className) className = 'inserted';
-var css = '@keyframes nodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, to); } } @-moz-keyframes nodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, auto); } } @-webkit-keyframes nodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, auto); } } @-ms-keyframes nodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, auto); } } @-o-keyframes nodeInserted { from { clip: rect(1px, auto, auto, auto); }	to { clip: rect(0px, auto, auto, auto); } } .' + className + ' {	animation-duration: 0.001s;	-o-animation-duration: 0.001s;	-ms-animation-duration: 0.001s; -moz-animation-duration: 0.001s; -webkit-animation-duration: 0.001s; animation-name: nodeInserted; -o-animation-name: nodeInserted; -ms-animation-name: nodeInserted; -moz-animation-name: nodeInserted; -webkit-animation-name: nodeInserted;}';
+var css = '@keyframes ' + className + 'NodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, to); } } @-moz-keyframes ' + className + 'NodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, auto); } } @-webkit-keyframes ' + className + 'NodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, auto); } } @-ms-keyframes ' + className + 'NodeInserted { from { clip: rect(1px, auto, auto, auto); } to { clip: rect(0px, auto, auto, auto); } } @-o-keyframes ' + className + 'NodeInserted { from { clip: rect(1px, auto, auto, auto); }	to { clip: rect(0px, auto, auto, auto); } } .' + className + ' {	animation-duration: 0.001s;	-o-animation-duration: 0.001s;	-ms-animation-duration: 0.001s; -moz-animation-duration: 0.001s; -webkit-animation-duration: 0.001s; animation-name: ' + className + 'NodeInserted; -o-animation-name: ' + className + 'NodeInserted; -ms-animation-name: ' + className + 'NodeInserted; -moz-animation-name: ' + className + 'NodeInserted; -webkit-animation-name: ' + className + 'NodeInserted;}';
 var elem = document.createElement('style');
 var text = document.createTextNode(css);
 elem.appendChild(text);
@@ -12,11 +12,10 @@ else document.head.appendChild(elem);
 
 
 insertListener = function (event) {
-	if (event.animationName !== "nodeInserted") return;
+	if (event.animationName !== className +'NodeInserted') return;
 	var insertEvent = new Event('inserted');
 	insertEvent.initEvent('inserted', false, true);
 	insertEvent.inserted = event.target;
-
 
 	if (event.target.parentNode) event.target.parentNode.dispatchEvent(insertEvent);
 	document.dispatchEvent(insertEvent);
