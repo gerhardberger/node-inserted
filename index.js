@@ -16,6 +16,7 @@ insertListener = function (event) {
 	var insertEvent = new Event('inserted');
 	insertEvent.initEvent('inserted', false, true);
 	insertEvent.inserted = event.target;
+	insertEvent.animationName = event.animationName;
 
 	if (event.target.parentNode) event.target.parentNode.dispatchEvent(insertEvent);
 	document.dispatchEvent(insertEvent);
