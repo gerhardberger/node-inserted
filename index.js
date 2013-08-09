@@ -12,7 +12,8 @@ else document.head.appendChild(elem);
 
 
 insertListener = function (event) {
-	if (event.animationName !== className +'NodeInserted') return;
+	if (!(event.animationName === className +'NodeInserted' && !event.target.dataset['inserted'])) return;
+	event.target.dataset['inserted'] = true;
 	var insertEvent = new Event('inserted');
 	insertEvent.initEvent('inserted', false, true);
 	insertEvent.inserted = event.target;

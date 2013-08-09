@@ -1,6 +1,6 @@
 {
     "name": "node-inserted",
-    "version": "0.0.1",
+    "version": "0.0.6",
     "description": "Detect DOM element insertion.",
     "main": "index.js",
     "dependencies": {},
